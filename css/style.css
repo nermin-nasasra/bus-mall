@@ -36,3 +36,47 @@ img {
   margin: 10px;
   border-radius: 5px;
 }
+<<<<<<< HEAD
+=======
+
+  
+  header {
+    text-align: center;
+    border: 5px solid rgb(41, 7, 189);
+    color: white;
+    margin-bottom: 40px;
+  }
+  
+  header nav ul {
+    list-style: none;
+    
+  } 
+   header nav ul li {
+    display: inline-block;
+    padding: 10px;
+  }
+  header nav ul li a {
+    text-decoration: none;
+    color: coral;
+    font-size: 25px;
+    font-weight: 100;
+  }
+  header nav ul li a:hover {
+    color: white;
+  }
+  #imagesSection {
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  img {
+    width: 300px;
+    height: 300px;
+    border: 10px solid rgb(182, 18, 54);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+  }
+
+  
+>>>>>>> 786fc80c7843040685453afceaec4e5242ba2ab0
