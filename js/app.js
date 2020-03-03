@@ -51,7 +51,9 @@ pro.all = [];
 for (var i = 0; i < product.length; i++) {
   new pro(product[i]);
 }
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 var one, two, three; //,four, five, six;
 function render() {
@@ -63,7 +65,7 @@ function render() {
   three = pro.all[randomNumber(0, pro.all.length - 1)];
 
 //while (one.imagePath === two.imagePath || one.imagePath === three.imagePath || two.imagePath === three.imagePath) {
-  while (one.imagePath === two.imagePath || one.imagePath === three.imagePath || two.imagePath === three.imagePath || last.includes(one.imagePath) || last.includes(two.imagePath) || last.includes(three.imagePath)) {
+  while (one.imagePath === two.imagePath || one.imagePath === three.imagePath || two.imagePath === three.imagePath || last.includes(one.imagePath) || last.includes(three.imagePath) || last.includes(two.imagePath)) {
     one = pro.all[randomNumber(0, pro.all.length - 1)];
 
     two = pro.all[randomNumber(0, pro.all.length - 1)];
@@ -96,6 +98,8 @@ function render() {
 
   // console.log(pro.all);
 
+
+ 
   productOne.setAttribute('src', one.imagePath);
   productOne.setAttribute('alt', one.name);
   productOne.setAttribute('title', one.name);
@@ -112,6 +116,11 @@ function render() {
   last[0] = one.imagePath;
   last[1] = two.imagePath;
   last[2] = three.imagePath;
+
+ while (last.length>3){
+   last.shift();
+ }
+
 }
 render();
 
@@ -149,9 +158,6 @@ function render2() {
   //   liE1.textContent = `${pro.all[i].name} has ${pro.all[i].clicks} clicks and ${pro.all[i].views} views`;
   //   ulE1.appendChild(liE1);
   // }
-
-
-
   var newProductClicks = [];
   var newviews = [];
   for (var i = 0; i < product.length; i++) {
