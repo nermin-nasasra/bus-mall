@@ -55,6 +55,23 @@ for (var i = 0; i < product.length; i++) {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+function translateproduct() {
+  var produststring = JSON.stringify(pro.all);
+  localStorage.setItem('productorders', produststring);
+}
+
+
+function getproduct() {
+  var produststring= localStorage.getItem('productorders');
+  if(produststring) {
+    pro.all = JSON.parse(produststring);
+   
+    render2();
+
+  }
+}
+getproduct();
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 var one, two, three; //,four, five, six;
 function render() {
 
@@ -64,39 +81,13 @@ function render() {
 
   three = pro.all[randomNumber(0, pro.all.length - 1)];
 
-//while (one.imagePath === two.imagePath || one.imagePath === three.imagePath || two.imagePath === three.imagePath) {
-  while (one.imagePath === two.imagePath || one.imagePath === three.imagePath || two.imagePath === three.imagePath || last.includes(one.imagePath) || last.includes(three.imagePath) || last.includes(two.imagePath)) {
+  while (one.imagePath === two.imagePath || one.imagePath === three.imagePath || two.imagePath === three.imagePath || last.includes(one.imagePath) || last.includes(two.imagePath) || last.includes(three.imagePath)) {
     one = pro.all[randomNumber(0, pro.all.length - 1)];
 
     two = pro.all[randomNumber(0, pro.all.length - 1)];
 
     three = pro.all[randomNumber(0, pro.all.length - 1)];
   }
-  // pro.all.pop(one);
-  // pro.all.pop(two);
-  // pro.all.pop(three);
-
-  // console.log(pro.all);
-
-  // four = pro.all[randomNumber(0, pro.all.length - 1)];
-
-  // five = pro.all[randomNumber(0, pro.all.length - 1)];
-
-  // six = pro.all[randomNumber(0, pro.all.length - 1)];
-
- 
-  // while (four.imagePath === five.imagePath || four.imagePath === six.imagePath || five.imagePath === six.imagePath) {
-  //   four = pro.all[randomNumber(0, pro.all.length - 1)];
-
-  //   five = pro.all[randomNumber(0, pro.all.length - 1)];
-
-  //   six = pro.all[randomNumber(0, pro.all.length - 1)];
-  // }
-  // pro.all.push(one);
-  // pro.all.push(two);
-  // pro.all.push(three);
-
-  // console.log(pro.all);
 
 
  
@@ -146,18 +137,21 @@ function handleClickOnpro(event) {
   } else {
     console.log('more than 25 clicks');
     imageSection.removeEventListener('click', handleClickOnpro);
+   
+    translateproduct();
     render2();
   }
+ 
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 function render2() {
-  // var ulE1 = document.getElementById('summary');
-  // for (var i =0; i<pro.all.length ; i++) {
-  //   var liE1 = document.createElement('li');
-  //   liE1.textContent = `${pro.all[i].name} has ${pro.all[i].clicks} clicks and ${pro.all[i].views} views`;
-  //   ulE1.appendChild(liE1);
-  // }
+  var ulE1 = document.getElementById('summary');
+  for (var i =0; i<pro.all.length ; i++) {
+    var liE1 = document.createElement('li');
+    liE1.textContent = `${pro.all[i].name} has ${pro.all[i].clicks} clicks and ${pro.all[i].views} views`;
+    ulE1.appendChild(liE1);
+  }
   var newProductClicks = [];
   var newviews = [];
   for (var i = 0; i < product.length; i++) {
@@ -210,4 +204,3 @@ function render2() {
 function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
