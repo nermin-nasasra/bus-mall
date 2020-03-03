@@ -1,5 +1,4 @@
 body {
-<<<<<<< HEAD
   background: rgb(221, 208, 217);
 }
 header {
@@ -37,9 +36,8 @@ img {
   margin: 10px;
   border-radius: 5px;
 }
-=======
-    background: rgb(212, 154, 198);
-  }
+
+  
   header {
     text-align: center;
     border: 5px solid rgb(41, 7, 189);
@@ -79,4 +77,3 @@ img {
   }
 
   
->>>>>>> 0f4f1cdb820599902a3cef94e2e965801c765a87
