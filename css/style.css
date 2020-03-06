@@ -3,26 +3,11 @@ body {
 }
 header {
   text-align: center;
-  border: 5px solid rgb(71, 7, 37);
+
   color: white;
   margin-bottom: 40px;
 }
-header nav ul {
-  list-style: none;
-}
-header nav ul li {
-  display: inline-block;
-  padding: 10px;
-}
-header nav ul li a {
-  text-decoration: none;
-  color: coral;
-  font-size: 25px;
-  font-weight: 100;
-}
-header nav ul li a:hover {
-  color: white;
-}
+
 #imagesSection {
   max-width: 90%;
   margin: 0 auto;
@@ -40,28 +25,16 @@ img {
   
   header {
     text-align: center;
-    border: 5px solid rgb(41, 7, 189);
-    color: white;
-    margin-bottom: 40px;
+  
+    color: rgb(73, 21, 60);
+    margin-bottom: 5px;
   }
   
   header nav ul {
     list-style: none;
     
-  } 
-   header nav ul li {
-    display: inline-block;
-    padding: 10px;
   }
-  header nav ul li a {
-    text-decoration: none;
-    color: coral;
-    font-size: 25px;
-    font-weight: 100;
-  }
-  header nav ul li a:hover {
-    color: white;
-  }
+
   #imagesSection {
     max-width: 90%;
     margin: 0 auto;
@@ -77,3 +50,29 @@ img {
   }
 
   
+
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(145, 108, 108);
+    
+  }
+  
+  li a {
+
+    color: rgb(0, 0, 0);
+    text-align: center;
+    text-decoration: none;
+  }
+  
+
+  li a:hover {
+    background-color: rgb(155, 124, 124);
+  }
+  nav{
+    border: 1px solid #301e1e;
+ 
+  }
